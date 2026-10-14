@@ -113,34 +113,31 @@ displayed if the 'eventbrite' field in the header is not set.
 {% endif %}
 
 
-<h2 id="general">General Information</h2>
-
-<p id="what">
-  <strong>About this workshop:</strong>
-  This course is an introduction to containers and is intended as a beginner level course that is suitable for people who have no experience of containers. 
-  It is aimed to help people who want to develop their knowledge of container tooling to help improve reproducibility and support their research work, or that of individuals or teams they are working with.
-  Basic familiarity with using the Unix shell/the command line is assumed. We'll be using Docker or Podman during this course, but may discuss Singularity at the end as well, if there is interest. Please note that ideally admin access to your laptop is required for this workshop, in order to install Docker/Podman. If you don't already have an EP account, this can be requested through the ServiceHub (Request a Service -> IT -> Access Requests -> Request an EP account); however, you will need a business case from your director before applying. If this isn't possible, please get in touch with us so that we can arrange a workaround. 
-  Please see the course notes for further information or get in touch with us. 
-</p>
-
-<p id="course-notes">
-  <strong>Course Notes:</strong>
-  The course notes can be found on <a href="{{site.incubator_lesson_site}}">the lesson homepage</a>.
-</p>
-
-<p id="who-can-attend">
-    <strong>Who can attend?:</strong>
-    This workshop is open to all staff and students from the National Oceanography Centre. Limited numbers are available for other organisations who collaborate with the National Oceanography Centre.
-</p>
-
-{% comment %}
-LOCATION
-
-This block displays the address and links to maps showing directions
-if the latitude and longitude of the workshop have been set.  You
-can use https://www.latlong.net/ to find the lat/long of an
-address.
-{% endcomment %}
+<div class="card mb-2">
+  <h5 id="general" class="card-header">General Information</h5>
+  <div class="card-body">
+      <dl class="mb-0">
+      <div class="row">
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">What</dt>
+        <dd class="col py-2 px-3 mx-0 mb-0">
+          <p id="what">
+            This course is an introduction to containers and is intended as a beginner level course that is suitable for people who have no experience of containers. 
+            It is aimed to help people who want to develop their knowledge of container tooling to help improve reproducibility and support their research work, or that of individuals or teams they are working with.
+            Basic familiarity with using the Unix shell/the command line is assumed. We'll be using Docker or Podman during this course, but may discuss Singularity at the end as well, if there is interest.
+          </p>
+        </dd>
+      </div>
+      <div class="row">
+        <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Course Notes</dt>
+        <dd class="col py-2 px-3 mx-0 mb-0">
+          <p id="course-notes">
+            The course notes can be found on <a href="{{site.incubator_lesson_site}}">the lesson homepage</a>.
+          </p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
 
 {% assign begin_address = page.address | slice: 0, 4 | downcase  %}
 {% if page.address == "online" %}
@@ -158,16 +155,7 @@ address.
     <div class="row">
         <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Who</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
-            {% comment %}
-            AUDIENCE
-
-            Explain who your audience is.  (In particular, tell readers if the
-            workshop is only open to people from a particular institution.
-            {% endcomment %}
-            {% assign who_file = site.carpentry | append: '/who.html' %}
-            {% if isOfficial %}
-            {% include {{ who_file }} %}
-            {% endif %}    
+            <p>This workshop is open to all staff and students from the National Oceanography Centre. Limited numbers are available for other organisations who collaborate with the National Oceanography Centre.</p>
         </dd>
     </div>
     <div class="row">
@@ -200,11 +188,6 @@ address.
     <div class="row">
         <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">When</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
-            {% comment %}
-            DATE
-
-            This block displays the date and links to Google Calendar.
-            {% endcomment %}
             {% if page.humandate %}
                 <p id="when">
                     {{page.humandate}}; {{page.humantime}}
@@ -216,21 +199,8 @@ address.
     <div class="row">
         <dt class="col-sm-2 col-md-2 py-2 px-3 bg-body-light text-body-secondary fw-bold">Requirements</dt>
         <dd class="col py-2 px-3 mx-0 mb-0">
-            {% comment %}
-            SPECIAL REQUIREMENTS
-
-            Modify the block below if there are any special requirements.
-            {% endcomment %}
-            <p id="requirements">
-            {% if online == "false" %}
-                Participants must bring a laptop with a
-                Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-            {% else %}
-                Participants must have access to a computer with a
-                Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-            {% endif %}
-            They should have a few specific software packages installed (listed <a href="#setup">below</a>).
-            </p>
+            <p>Please note that ideally admin access to your laptop is required for this workshop, in order to install Docker/Podman. If you don't already have an EP account, this can be requested through the ServiceHub (Request a Service -> IT -> Access Requests -> Request an EP account); however, you will need a business case from your director before applying. If this isn't possible, please get in touch with us so that we can arrange a workaround. 
+  Please see the course notes for further information or get in touch with us. </p>
         </dd>  
     </div>
     <div class="row">
