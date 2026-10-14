@@ -1,19 +1,19 @@
 ---
 # More detailed instructions (including how to fill these variables for an # online workshop) are available at https://carpentries.github.io/workshop-template/customization/index.html#yaml-header
 # Required variables
-venue: "FIXME"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
-address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
-country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
-language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
-latitude: "FIXME"     # decimal latitude of workshop venue - this should be a number greater than or equal to -90, and less than or equal to 90 (use https://www.latlong.net/)
-longitude: "FIXME"    # decimal longitude of the workshop venue - this should be a number greater than or equal to -180, and less than or equal to 180 (use https://www.latlong.net)
-humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "FIXME"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
-startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["instructor one", "instructor two"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["helper one", "helper two"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-email: ["first@example.org","second@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
+venue: "National Oceanography Centre"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
+address: "online"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
+country: "gb"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
+language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
+latitude: "50.8930098"     # decimal latitude of workshop venue - this should be a number greater than or equal to -90, and less than or equal to 90 (use https://www.latlong.net/)
+longitude: "-1.3974532"    # decimal longitude of the workshop venue - this should be a number greater than or equal to -180, and less than or equal to 180 (use https://www.latlong.net)
+humandate: "December 1, 2026"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "9:30 am - 5 pm GMT"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
+startdate: 2026-12-01      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2026-12-01        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+instructor: ["Hannah Baldwin", "Esther Turner", "Tobias Ferreira"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: []     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+email: ["hannah.baldwin@noc.ac.uk","esther.turner@noc.ac.uk", "tobias.ferreira@noc.ac.uk"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 # Optional variables
 collaborative_notes:  # URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
@@ -113,77 +113,25 @@ displayed if the 'eventbrite' field in the header is not set.
 {% endif %}
 
 
-{% comment %}
-INTRODUCTION
+<h2 id="general">General Information</h2>
 
-Edit the general explanatory paragraph below if you want to change the pitch.
-{% endcomment %}
+<p id="what">
+  <strong>About this workshop:</strong>
+  This course is an introduction to containers and is intended as a beginner level course that is suitable for people who have no experience of containers. 
+  It is aimed to help people who want to develop their knowledge of container tooling to help improve reproducibility and support their research work, or that of individuals or teams they are working with.
+  Basic familiarity with using the Unix shell/the command line is assumed. We'll be using Docker or Podman during this course, but may discuss Singularity at the end as well, if there is interest. Please note that ideally admin access to your laptop is required for this workshop, in order to install Docker/Podman. If you don't already have an EP account, this can be requested through the ServiceHub (Request a Service -> IT -> Access Requests -> Request an EP account); however, you will need a business case from your director before applying. If this isn't possible, please get in touch with us so that we can arrange a workaround. 
+  Please see the course notes for further information or get in touch with us. 
+</p>
 
-<div class="row g-3 pb-3">
+<p id="course-notes">
+  <strong>Course Notes:</strong>
+  The course notes can be found on <a href="{{site.incubator_lesson_site}}">the lesson homepage</a>.
+</p>
 
-  <!-- left column spans 2 rows -->
-  <div class="col-md-6">
-    <div class="card h-100">
-        <h5 class="card-header">The Carpentries</h5>
-        <div class="card-body">
-            <p>
-            <strong><a href="https://carpentries.org">The Carpentries</a></strong> project comprises the
-            <a href="{{site.dc_site}}">Data Carpentry</a>,
-            <a href="{{site.hpcc_site}}">High-Performance Computing Carpentry</a>,  
-            <a href="{{site.lc_site}}">Library Carpentry</a>, and
-            <a href="{{site.swc_site}}">Software Carpentry</a>
-             communities of Instructors, Trainers, Maintainers, helpers, and supporters who share a mission to teach foundational computational and data science skills to researchers.
-            </p>
-            {% assign intro_file = site.carpentry | append: '/intro.html' %}
-            {% if isOfficial %}
-            {% include {{ intro_file }} %}
-            {% endif %}
-        </div>
-    </div>
-  </div>
-
-  <!-- right column with two stacked cards -->
-  <div class="col-md-6 d-flex flex-column gap-3">
-    <div class="card flex-fill">
-        <h5 class="card-header">Carpentries Clippings</h5>
-        <div class="card-body">
-        <p class="text-center">
-        <strong>Want to learn more and stay engaged with The Carpentries?</strong>
-        </p>
-        <p class="text-center">
-        Carpentries Clippings is The Carpentries' monthly newsletter, where we share community news, community job postings, and more.
-        </p>
-        <p class="text-center">
-            <a href="https://carpentries.org/newsletter/">
-                <button type="button" class="btn btn-success">Sign up to our newsletter</button>
-            </a>
-        </p>
-      </div>
-    </div>
-    <div class="card flex-fill">
-      <h5 class="card-header">Code of Conduct</h5>
-      <div class="card-body">
-        {% comment%}
-        CODE OF CONDUCT
-        {% endcomment %}
-        <p class="text-center">
-        Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/policies/coc/">Code of Conduct</a>, which also outlines how to report an incident if needed.
-        </p>
-
-        <p class="text-center">
-        <a href="https://goo.gl/forms/KoUfO53Za3apOuOK2">
-            <button type="button" class="btn btn-info">Report a Code of Conduct Incident</button>
-        </a>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-{% if site.pilot %}
-This is a pilot workshop, testing out a lesson that is still under development. The lesson authors would appreciate any feedback you can give them about the lesson content and suggestions for how it could be further improved.
-{% endif %}
-
+<p id="who-can-attend">
+    <strong>Who can attend?:</strong>
+    This workshop is open to all staff and students from the National Oceanography Centre. Limited numbers are available for other organisations who collaborate with the National Oceanography Centre.
+</p>
 
 {% comment %}
 LOCATION
